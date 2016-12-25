@@ -1,7 +1,21 @@
 import React from 'react';
 import {render} from 'react-dom';
 import App from './app.js';
+import { injectGlobal } from 'styled-components'
 
+injectGlobal`
+    * {
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100%;
+        width: 100%;
+        background-color: GHOSTWHITE;
+        font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+      }
+`
 const mock = {
     "name": "mock flow",
     "startTime": "1479141248.000002",
