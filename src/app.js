@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import avatarNirBenita from './assets/benitanir.png'
 
 const FlexContainer = styled.div`
   display:flex;
@@ -21,7 +22,6 @@ const Message = styled.li`
   border-radius:6px;
   margin-bottom:6px;
   color: SlateGrey;
-  font-family: ${props => props.theme.systemFonts};
   padding:12px;
 `;
 
@@ -29,9 +29,11 @@ const MessageStack = styled.ul`
   list-style: none;
   padding:12px;
 `;
-
+const Avatar = styled.img`
+  background:salmon;
+`
 export default class App extends React.Component {
-  render() {
+    render() {
     const session = this.props.session
     return (
         <FlexContainer>
@@ -41,7 +43,7 @@ export default class App extends React.Component {
             <p>Lasted {(Math.floor((parseInt(session.startTime) - parseInt(session.endTime)) / 1000))} seconds</p>
           </SessionInfo>
           <MessageStack>
-            {session.messages.map(msg => <Message>{msg.text}</Message>)}
+            {session.messages.map(msg => <Message><Avatar src={avatarNirBenita}/>{msg.text}</Message>)}
           </MessageStack>
         </FlexContainer>
     );
