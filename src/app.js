@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import avatarNirBenita from './assets/benitanir.png'
 
 const FlexContainer = styled.div`
   display:flex;
@@ -12,8 +11,9 @@ const FlexContainer = styled.div`
 
 const SessionInfo = styled.section`
   max-width:276px;
-  height:100%;
+  height:100vh;
   padding:12px;
+  background-color: GHOSTWHITE;
 `
 
 const Message = styled.li`
@@ -22,15 +22,25 @@ const Message = styled.li`
   border-radius:6px;
   margin-bottom:6px;
   color: SlateGrey;
-  padding:12px;
+  display:flex;
+  align-items:center;
+
+  .avatar {
+    align-self:flex-start;
+  }
 `;
 
 const MessageStack = styled.ul`
   list-style: none;
-  padding:12px;
 `;
 const Avatar = styled.img`
   background:salmon;
+  margin:12px
+`
+
+const Username = styled.p`
+  font-weight:800;
+  color:black;
 `
 export default class App extends React.Component {
     render() {
@@ -43,7 +53,13 @@ export default class App extends React.Component {
             <p>Lasted {(Math.floor((parseInt(session.startTime) - parseInt(session.endTime)) / 1000))} seconds</p>
           </SessionInfo>
           <MessageStack>
-            {session.messages.map(msg => <Message><Avatar src={avatarNirBenita}/>{msg.text}</Message>)}
+            {session.messages.map(msg => <Message>
+              <Avatar className="avatar" src={msg.avatar}/>
+              <div>
+                <Username>{msg.user}</Username>
+                <p>{msg.text}</p>
+              </div>
+            </Message>)}
           </MessageStack>
         </FlexContainer>
     );

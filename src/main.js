@@ -3,16 +3,23 @@ import {render} from 'react-dom';
 import App from './app.js';
 import { injectGlobal } from 'styled-components';
 
+// Simulating Slack Data
+import avatarBenita from './assets/benitanir.png'
+import avatarArnon from './assets/arnon.png'
+
 injectGlobal`
     * {
         padding:0;
         margin:0;
         box-sizing: border-box;
       }
+      html {
+        font-size: 75%;
+        
+      }
       body {
         height: 100%;
         width: 100%;
-        background-color: GHOSTWHITE;
         font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
       }
 `
@@ -22,24 +29,27 @@ const mock = {
     "messages": [{
         "type": "message",
         "channel": "C2CU76YDB",
-        "user": "U2CTXB49J",
-        "text": "This product is terrible! No it's not ^_^",
+        "user": "benita",
+        "avatar": avatarBenita,
+        "text": "the New File should open the newly created file in a new window.",
         "ts": "1479117541.000034",
         "team": "T2CSKBAE7",
         "event": "ambient"
     }, {
         "type": "message",
         "channel": "C2CU76YDB",
-        "user": "U2CTXB49J",
-        "text": "Testing a product",
+        "user": "arnon",
+        "avatar": avatarArnon,
+        "text": "the're was missing context when he opened the new file",
         "ts": "1479141266.000005",
         "team": "T2CSKBAE7",
         "event": "ambient"
     }, {
         "type": "message",
         "channel": "C2CU76YDB",
-        "user": "U2CTXB49J",
-        "text": "Let's see how this goes...",
+        "user": "benita",
+        "avatar": avatarBenita,
+        "text": "the part about comapring files in the tutorial isn't working. let’s find a better way.",
         "ts": "1479141271.000006",
         "team": "T2CSKBAE7",
         "event": "ambient"
