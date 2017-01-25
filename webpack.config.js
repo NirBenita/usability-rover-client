@@ -1,7 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
 var loaders = [
   {
     "test": /\.js?$/,
@@ -15,7 +14,12 @@ var loaders = [
       ],
       "plugins": []
     }
-  }
+  },
+  { 
+    test: /\.(png|jpg)$/, 
+    loader: 'url-loader?limit=8192'
+  } // inline base64 URLs for <=8k images, direct URLs for the rest
+
 ];
 
 module.exports = {
