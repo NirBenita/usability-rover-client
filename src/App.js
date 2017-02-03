@@ -23,12 +23,18 @@ injectGlobal`
         width: 100%;
         font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
       }
+      p{
+        font-family: Roboto-Regular;
+        font-size: 14px;
+        color: #1F455C;
+        line-height: 24px;
+      }
 `
 class App extends React.Component {
     render() {
         return (
             <Router history={hashHistory}>
-                <Route path="/" component={HomePage} >
+                <Route path="/">
                 </Route>
             </Router>
         )
