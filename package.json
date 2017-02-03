@@ -7,13 +7,12 @@
     "url": "https://github.com/NirBenita/usability-rover-client"
   },
   "scripts": {
-    "start": "webpack-dev-server --content-base build/",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "start": "webpack-dev-server --content-base build/"
   },
   "dependencies": {
     "react": "15.4.1",
     "react-dom": "15.4.1",
+    "react-router": "^3.0.2",
     "styled-components": "^1.2.1"
   },
   "devDependencies": {
@@ -24,8 +23,7 @@
     "babel-preset-stage-0": "6.5.0",
     "html-webpack-plugin": "1.6.1",
     "webpack": "1.12.13",
-    "webpack-dev-server": "1.14.1",
-    "@kadira/storybook": "^2.21.0"
+    "webpack-dev-server": "1.14.1"
   },
   "author": "WebpackBin",
   "license": "ISC"
