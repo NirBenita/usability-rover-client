@@ -24,7 +24,7 @@ var loaders = [
 
 module.exports = {
   devtool: 'eval-source-map',
-  entry: path.resolve('src', 'main.js'),
+  entry: path.resolve('src', 'App.js'),
   output: {
     path: path.resolve('build'),
     filename: '[name].js',
