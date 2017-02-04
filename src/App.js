@@ -33,7 +33,7 @@ injectGlobal`
 class App extends React.Component {
     render() {
         return (
-            <Router history={hashHistory}>
+            <Router history={hashHistory} components={HomePage} >
                 <Route path="/">
                 </Route>
             </Router>
