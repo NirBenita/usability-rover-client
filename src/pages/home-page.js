@@ -35,7 +35,6 @@ export default class HomePage extends React.Component {
               <p>A description of the said title. I also need to add a date, and how long it lasted</p>
             </MenuItem>
             )}
-            
             </ul> 
           </div>
       );
