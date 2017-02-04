@@ -8,7 +8,7 @@ import styled from 'styled-components';
       flex:1;
     }
   `
-
+  
   const Label = styled.span`
     font-size: 14px;
     color: #B6C1CD;
