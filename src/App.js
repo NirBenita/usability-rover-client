@@ -34,8 +34,7 @@ class App extends React.Component {
     render() {
         return (
             <Router history={ hashHistory } >
-                <Route path="/" component={ HomePage } >
-                </Route>
+                <Route path="/" component={ ()=> <SessionPage session={mock} /> } />
             </Router>
         )
     }
