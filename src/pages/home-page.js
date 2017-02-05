@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import SessionPage from './session-page';SessionPage
 
 import {
-  Label
+  Label,
+  LinkTo
 } from '../components/primitives.js'
 
 const MenuItem = styled.li`
@@ -28,12 +30,14 @@ export default class HomePage extends React.Component {
       return (
           <div>
             <ul>
-            {gaga.map(()=> <MenuItem>
-              <h2>Session Title</h2>
-              <Label>🗓 Date</Label>
-              <Label> ⌛ Duration </Label>
-              <p>A description of the said title. I also need to add a date, and how long it lasted</p>
-            </MenuItem>
+            {gaga.map((sessionLink, index)=> <LinkTo key={index} to={`/session`}>
+              <MenuItem>
+                <h2>Session Title</h2>
+                <Label>🗓 Date</Label>
+                <Label> ⌛ Duration </Label>
+                <p>A description of the said title. I also need to add a date, and how long it lasted</p>
+              </MenuItem>
+            </LinkTo>
             )}
             </ul> 
           </div>

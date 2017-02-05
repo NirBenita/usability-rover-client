@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 import SessionPage from './pages/session-page';
 import HomePage from './pages/home-page';
 import { injectGlobal } from 'styled-components';
@@ -33,14 +33,17 @@ injectGlobal`
 class App extends React.Component {
     render() {
         return (
-            <Router history={ hashHistory } >
-                <Route path="/" component={ ()=> <SessionPage session={mock} /> } />
+            <Router history={hashHistory} >
+                <Route path="/" >
+                    <IndexRoute component={HomePage} />
+                    <Route path="session" component={() => <SessionPage session={mock} />} />
+                </Route>
             </Router>
         )
     }
 }
 
 render(
-    <App session={mock} />,
+    <App session />,
     document.querySelector('#app')
 );
